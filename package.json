@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "next": "^13.0.4",
+    "axios": "^1.2.0",
+    "gatsby": "^5.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.1.16"
+  },
+  "name": "bitfi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tedy97123/Bitfi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tedy97123/Bitfi/issues"
+  },
+  "homepage": "https://github.com/tedy97123/Bitfi#readme",
+  "description": ""
+}

@@ -1,8 +1,44 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import React from 'react';
+import api from '../pages/api/api'
+import {
+  LineChart,
+  XAxis,
+  CartesianGrid,
+  Line,
+  Tooltip,
+  YAxis,
+  Label
+} from 'recharts'
+
+
 
 export default function Home() {
+  
+   // Create state variables
+   let [responseData, setResponseData] = React.useState('');
+   let [ticker, setTicker] = React.useState('');
+   let [message, setMessage] = React.useState('');
+
+   // fetches stock data based on parameters
+   const fetchData = (e) => {
+       e.preventDefault()
+       setMessage('Loading...')
+       api.stockTimeSeries(ticker)
+       .then((response)=>{
+          setResponseData(response.data)
+          setMessage('')
+          console.log(response)
+       })
+       .catch((error) => {
+          setMessage('Error')
+          console.log(error)
+       })
+   }
+
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -13,59 +49,74 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://nextjs.org"> BitFi </a>
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <div
+            style={{
+                background: 'white',
+                padding: '5%',
+                fontFamily: "Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,Bitstream Vera Sans Mono, Courier New, monospace "
+            }}>
+            <h1 className={styles.title}> Search for your favorite Comany</h1>
+            <h2>Analyze Stock Data</h2>
+            <form onSubmit={fetchData}>
+                <fieldset>
+                    <legend>Search Stock Market</legend>
+                    <label htmlFor="ticker">Enter stock ticker
+                        <input
+                            required
+                            name="ticker"
+                            id="ticker"
+                            type='text'
+                            placeholder='SPY'
+                            value={ticker}
+                            onChange={(e) => setTicker(e.target.value)}
+                        />
+                    </label>
+                    <button type='submit'>Submit</button>
+                </fieldset>
+            </form>
+            <p>{message}</p>
+            <h3>Symbol: {responseData ? responseData.symbol : ''}</h3>
+            <p>Daily Time Series with Splits and Dividend Events</p>
+            <small>Last Refresh: {responseData ? responseData.refreshed : ''}</small>
+            <LineChart
+                width={900}
+                height={500}
+                data={responseData.closePrices}
+                margin={{ top: 50, right: 20, left: 10, bottom: 5 }}
+                >
+                <YAxis tickCount={10} type="number" width={80}>
+                    <Label value="Close Price" position="insideLeft" angle={270} />
+                </YAxis>
+                <Tooltip />
+                <XAxis padding={{left: 5, right: 5}} tickCount={10} angle={-60} height={90} dataKey="date" />
+                <CartesianGrid stroke="#fafafa" />
+                <Line type="monotone" dataKey="close" stroke="#ff7300" yAxisId={0} />
+            </LineChart>
+        </div>
     </div>
+
   )
 }
+
+//export default async function getStaticProps(){
+  //const options = {
+    //headers: {
+      //'X-Rapid-Api' : '',
+      //'X-Rapid-Key' : ''
+    //}
+  //}
+  
+  //const res = await fetch ("")
+  //const MarketData = await res.json();
+
+  //return {
+    //props: {
+    //  MarketData
+    //}
+  //}
+
+//}
