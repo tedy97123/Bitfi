@@ -29,15 +29,15 @@ export default function Home() {
       <div className={styles.container}>
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Welcome to<a href="http://localhost:3000/_stocksearch">Blue Chip </a>
+            Welcome to <a href="http://localhost:3000/_stocksearch">Blue Chip<Image styles={{height:"50%",width:"50%",marginTop:"180px"}} alt="blue-pig" height={50} width={50} src="/chip1.gif"/></a>
           </h1>
-          <div>
-            <Cards/>
-          </div>
+          <Cards/>
         </main>
+         
     </div>
+   
     </Wrapper>
-    <BgImage/>
+    <BgImage alt="water"/>
     </div>
   )
 }

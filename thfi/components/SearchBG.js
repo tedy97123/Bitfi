@@ -16,7 +16,7 @@ function getWindowDimensions(){
         height,
     };
 }
-function BGImage(){
+function SearchBG(){
     const [width,setWidth] = useState (0);
     const [height,setHeight] = useState(0);
 
@@ -46,9 +46,10 @@ if (width && height ){
     return (
         <Box>
             <Image
-            src="/endless.svg"
+            src="/blue.svg"
             width={width}
             height={height}
+            overflow=""
             alt="logo"
             /> 
         </Box>
@@ -56,4 +57,4 @@ if (width && height ){
     }
 return null;
 }
-export default BGImage;
+export default SearchBG;

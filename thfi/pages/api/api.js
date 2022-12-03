@@ -7,8 +7,9 @@ const instance = axios.create({
         'content-type':'application/octet-stream',
         'x-rapidapi-host':'alpha-vantage.p.rapidapi.com',
         'x-rapidapi-key': '5ce3259baamsh927e932246a4b9bp13b280jsne1e7b7bc0238'
-    }
+    },
 });
+
 export default {
     stockTimeSeries: (symbol) =>
     instance({
@@ -18,28 +19,28 @@ export default {
             'outputsize':'compact',
             'datatype':'json',
             'function':'TIME_SERIES_DAILY_ADJUSTED',
-            'symbol': symbol.toUpperCase()
+            'symbol': symbol.toUpperCase(),
         },
         transformResponse: [function (data) {
             // Do whatever you want to transform the data
-            console.log('Transforming data...')
-            const json = JSON.parse(data)
+            console.log('Transforming data...');
+            const json = JSON.parse(data);
             const dates = Object.keys(json['Time Series (Daily)']).reverse()
             // Construct response data for chart input
             const closePrices = dates.map(date => date = {
                 date,
                 close: Number(json['Time Series (Daily)'][date]['4. close'])
-            })
+            });
             const symbol = json['Meta Data']['2. Symbol']
             const refreshed = json['Meta Data']['3. Last Refreshed']
             data = {
                 symbol,
                 refreshed,
                 closePrices
-            }
+            };
             return data;
         }],
-    }),
+    })
     
 }
 
