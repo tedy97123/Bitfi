@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+ 
+const path = require('path')
+
 const nextConfig = {
   reactStrictMode: true,
 
@@ -9,7 +12,24 @@ const nextConfig = {
       use: ["@svgr/webpack"],
     });
     return config;
-  }
-}
+  },
 
-module.exports = nextConfig
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
+  
+  compress:true,
+
+}
+  
+
+module.exports = nextConfig 
+
+ 
+
+
+
+module
+ 
+
+ 

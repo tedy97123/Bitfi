@@ -11,6 +11,7 @@
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color: "#ebf5fc";
+    float: left;
  
 }
 
@@ -23,6 +24,8 @@
     flex-wrap: wrap;
     padding: 70px 0;
     margin-left: 650px;
+    
+    
   
 }
 
@@ -31,11 +34,14 @@
     position: relative;
     width:320px;
     height:440px;
-    box-shadow: inset 5px 5px 4px rgba(0,0,0,0.05),
+    box-shadow: inset 5px 5px 4px rgb(224, 221, 221),
                 inset -5px -5px -5px rgba(255,255,255,0.5),
-                5px 5px 5px rgba(0,0,0,0.05),
-                -5px -5px -5px rgba(255,255,255,0.5);
+                5px 5px 5px rgba(252, 252, 252, 0.596),
+                -5px -5px -5px rgba(255, 255, 255, 0.775);
     border-radius: 15px;
+    float: left;
+    flex-wrap: wrap;
+    
 }
 
 .container .card .box {
@@ -45,18 +51,20 @@
     right:20px;
     bottom:20px;
     background: #ebf5fc;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.3s;
+    
+    
 }
 .container .card:hover .box 
 {
     transform: translateY(-50px);
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-    background: linear-gradient(45deg, #d7d7d7,#216fce)
+    background: linear-gradient(45deg, #d7d7d7,#7eaee9)
 }
 
 .container .card .box .content {
@@ -70,21 +78,21 @@
     top:-10;
     right: 30px;
     font-size: 8em;
-    color:rgba(0, 0, 0, 0.356);
-    transition:0.5s;
+    color:rgba(0, 0, 0, 0.256);
+    transition:0.4s;
     pointer-events: none;
     
 }
 
 .container .card:hover .box .content  h2 
 {
-    color:rgba(0,0,0,0.05)
+    color:rgba(251, 247, 247, 0.05)
 }
 
 .container .card:hover .box .content h3 
 {
     font-size: 1.1em;
-    color:#777;
+    color:rgb(255, 250, 250);
     z-index:1;
     transition:0.3s;
 }
