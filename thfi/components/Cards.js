@@ -21,7 +21,7 @@ export default function Cards() {
                     <h2> 👨🏼‍💻 </h2>
                         <h3>  Login </h3>
                         <p> Get authenticated and buy and sell securities at you leasure! </p>
-                         <a href='/stocksearch'>Login </a>  
+                         <a href='/login'>Login </a>  
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ const instance = axios.create({
     baseURL: 'https://real-time-finance-data.p.rapidapi.com',
     headers: {
         'x-rapidapi-host':'real-time-finance-data.p.rapidapi.com',
-        'x-rapidapi-key': '5ce3259baamsh927e932246a4b9bp13b280jsne1e7b7bc038'
+        'x-rapidapi-key': '5ce3259baamsh927e932246a4b9bp13b280jsne1e7b7bc0238'
     },
 });
 
@@ -15,8 +15,8 @@ export default {
         'method':'GET',
         'url':'/company-income-statement',
         'params': {
-            'period':'QUARTERLY',
             'symbol': symbol.toUpperCase()+":NASDAQ",
+            'period':'ANNUAL',
         },
     }), 
 };
