@@ -1,6 +1,20 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+Hero Page 
+
+Navigate through the application by either clicking one of the cards or a tool bar item
+file:///home/tyohanes97/Pictures/Screenshots/Screenshot%20from%202022-12-07%2022-23-48.png![image](https://user-images.githubusercontent.com/91521891/206373587-f123af62-2817-420e-93b9-09b8255002f5.png)
+
+Read the news from many categories
+file:///home/tyohanes97/Pictures/Screenshots/Screenshot%20from%202022-12-07%2022-24-08.png![image](https://user-images.githubusercontent.com/91521891/206373657-bf4e40f0-df28-4c05-a151-65cd3cb9eae3.png)
+
+
+Search your favorite stocks 
+
+file:///home/tyohanes97/Pictures/Screenshots/Screenshot%20from%202022-12-07%2022-24-31.png![image](https://user-images.githubusercontent.com/91521891/206373728-62914c57-7f1b-4095-a7ab-23d6369b46d5.png)
+
+
 
 First, run the development server:
 
