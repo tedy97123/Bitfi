@@ -4,15 +4,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Hero Page 
 
 Navigate through the application by either clicking one of the cards or a tool bar item
-file:///home/tyohanes97/Pictures/Screenshots/Screenshot%20from%202022-12-07%2022-23-48.png![image](https://user-images.githubusercontent.com/91521891/206373587-f123af62-2817-420e-93b9-09b8255002f5.png)
+ 
+![home2](https://user-images.githubusercontent.com/91521891/206374718-d8570327-2fb3-49da-92ee-233742759e5f.png)
 
 Read the news from many categories
-file:///home/tyohanes97/Pictures/Screenshots/Screenshot%20from%202022-12-07%2022-24-08.png![image](https://user-images.githubusercontent.com/91521891/206373657-bf4e40f0-df28-4c05-a151-65cd3cb9eae3.png)
+ 
+![news2](https://user-images.githubusercontent.com/91521891/206374979-b6285cd0-bae4-4193-9644-32d95e524162.png)
 
 
 Search your favorite stocks 
-
-file:///home/tyohanes97/Pictures/Screenshots/Screenshot%20from%202022-12-07%2022-24-31.png![image](https://user-images.githubusercontent.com/91521891/206373728-62914c57-7f1b-4095-a7ab-23d6369b46d5.png)
+ 
+![stock2](https://user-images.githubusercontent.com/91521891/206375113-473ed7e3-83a7-43bc-99cd-316373ad695a.png)
 
 
 
